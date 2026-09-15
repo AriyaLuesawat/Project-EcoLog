@@ -1,6 +1,6 @@
-# EcoLog
+# Project-EcoLog
 
-A full-stack web application for tracking personal environmental impact and monitoring real-time air quality data around the world.
+EcoLog is a collaborative full-stack web application for tracking personal environmental impact and monitoring real-time air quality data around the world.
 
 Built with Next.js 14, TypeScript, Prisma, and Zod — with full CRUD support and a 30-day CO2 impact chart.
 
@@ -53,8 +53,8 @@ Built with Next.js 14, TypeScript, Prisma, and Zod — with full CRUD support an
 ### Installation
 
 ```bash
-git clone https://github.com/Nawxtz/EcoLog.git
-cd EcoLog
+git clone https://github.com/AriyaLuesawat/Project-EcoLog.git
+cd Project-EcoLog
 npm install
 ```
 
@@ -86,56 +86,24 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Project Structure
 
 ```
-ecolog/
-├── app/
-│   ├── layout.tsx                  Root layout (Header, Navbar, Footer)
-│   ├── page.tsx                    Dashboard (server component)
-│   ├── _components/
-│   │   └── DashboardClient.tsx     Dashboard client interactions
-│   ├── explore/
-│   │   └── page.tsx                Explore page
-│   ├── log/
-│   │   └── page.tsx                Eco Log CRUD page
-│   ├── impact/
-│   │   └── page.tsx                Impact chart page
-│   ├── about/
-│   │   └── page.tsx                About page (static)
-│   └── api/
-│       ├── geocode/route.ts        City name search via Open-Meteo
-│       ├── air-quality/route.ts    AQI data via Open-Meteo
-│       ├── cities/
-│       │   ├── route.ts            GET + POST saved cities
-│       │   └── [id]/route.ts       DELETE saved city
-│       └── actions/
-│           ├── route.ts            GET + POST eco-actions
-│           └── [id]/route.ts       PUT + DELETE eco-action
-│
-├── components/
-│   ├── layout/
-│   │   ├── Header.tsx
-│   │   ├── Navbar.tsx
-│   │   └── Footer.tsx
-│   ├── cities/
-│   │   ├── CityCard.tsx
-│   │   ├── CitySearchForm.tsx
-│   │   └── AQIBadge.tsx
-│   ├── actions/
-│   │   ├── EcoActionForm.tsx
-│   │   ├── EcoActionTable.tsx
-│   │   └── EcoActionRow.tsx
-│   └── impact/
-│       └── ImpactChart.tsx
-│
-├── lib/
-│   ├── prisma.ts                   Prisma client singleton
-│   ├── co2Calculator.ts            CO2 factors and unit mapping
-│   └── aqiHelpers.ts               AQI label and badge utilities
-│
-├── schemas/
-│   ├── citySchema.ts               Zod schema for saved cities
-│   └── actionSchema.ts             Zod schema for eco-actions
-│
+Project-EcoLog/
+├── src/
+│   ├── app/                        Pages and API routes
+│   │   ├── _components/            Dashboard client interactions
+│   │   ├── about/                  Project information
+│   │   ├── api/                    Cities, actions, geocoding, and AQI APIs
+│   │   ├── explore/                City and air-quality search
+│   │   ├── impact/                 30-day CO2 impact chart
+│   │   └── log/                    Eco-action CRUD page
+│   ├── components/                 Reusable UI components
+│   │   ├── actions/
+│   │   ├── cities/
+│   │   ├── impact/
+│   │   └── layout/
+│   ├── lib/                        Prisma, CO2, and AQI utilities
+│   └── schemas/                    Zod validation schemas
 └── prisma/
+    ├── migrations/
     └── schema.prisma
 ```
 
@@ -208,3 +176,14 @@ EcoAction
   createdAt   DateTime  Auto
   updatedAt   DateTime  Auto
 ```
+
+---
+
+## Contributors
+
+Project-EcoLog was developed collaboratively by:
+
+- [AriyaLuesawat](https://github.com/AriyaLuesawat)
+- [Nawxtz](https://github.com/Nawxtz)
+
+The project is maintained at [AriyaLuesawat/Project-EcoLog](https://github.com/AriyaLuesawat/Project-EcoLog) and retains its connection to the original shared repository.
